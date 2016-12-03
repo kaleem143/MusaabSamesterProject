@@ -8,7 +8,6 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -155,8 +154,8 @@ public class MainFragment extends Fragment {
                     do {
                         email=   getEmail(c);
                         userpassword=getPassword(c);
-                        Log.d("useremail",email);
-                        Log.d("password",userpassword);
+//                        Log.d("useremail",email);
+//                        Log.d("password",userpassword);
                     } while (c.moveToNext());
                 }
                 db.close();
