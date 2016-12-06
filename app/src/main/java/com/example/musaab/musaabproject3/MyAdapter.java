@@ -16,16 +16,17 @@ import java.util.ArrayList;
 
 public class MyAdapter extends ArrayAdapter<Item> {
 
-    ArrayList<Item> animalList = new ArrayList<>();
+    ArrayList<Item> itemList = new ArrayList<>();
 
     public MyAdapter(Context context, int textViewResourceId, ArrayList<Item> objects) {
         super(context, textViewResourceId, objects);
-        animalList = objects;
+        itemList = objects;
     }
     @Override
     public int getCount() {
         return super.getCount();
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -35,10 +36,12 @@ public class MyAdapter extends ArrayAdapter<Item> {
         v = inflater.inflate(R.layout.list_view_items, null);
         TextView textView = (TextView) v.findViewById(R.id.textView);
         ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
-        textView.setText(animalList.get(position).getItemName());
-        imageView.setImageResource(animalList.get(position).getItemImage());
+        textView.setText(itemList.get(position).getItemName());
+        imageView.setImageResource(itemList.get(position).getItemImage());
+
         return v;
 
     }
+
 
 }

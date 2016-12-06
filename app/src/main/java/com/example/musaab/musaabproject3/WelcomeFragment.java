@@ -1,11 +1,13 @@
 package com.example.musaab.musaabproject3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -32,13 +34,23 @@ public class WelcomeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         simpleList = (ListView)view.findViewById(R.id.simpleListView);
-        shoppinList.add(new Item("Mens Fashion",R.mipmap.ic_launcher));
-        shoppinList.add(new Item("Womans Fashion",R.mipmap.ic_launcher));
-        shoppinList.add(new Item("Kids",R.drawable.com_facebook_auth_dialog_background));
-        shoppinList.add(new Item("Computers",R.drawable.com_facebook_auth_dialog_background));
-        shoppinList.add(new Item("Gaming Consoles",R.drawable.com_facebook_auth_dialog_background));
-        shoppinList.add(new Item("Mobiles Phones",R.drawable.com_facebook_auth_dialog_background));
+        shoppinList.add(new Item(1,"Mens Fashion",R.mipmap.ic_launcher));
+        shoppinList.add(new Item(2,"Womans Fashion",R.mipmap.ic_launcher));
+        shoppinList.add(new Item(3,"Kids",R.mipmap.ic_launcher));
+        shoppinList.add(new Item(4,"Computers",R.mipmap.ic_launcher));
+        shoppinList.add(new Item(5,"Gaming Consoles",R.mipmap.ic_launcher));
+        shoppinList.add(new Item(6,"Mobiles Phones",R.mipmap.ic_launcher));
         MyAdapter myAdapter=new MyAdapter(getActivity(),R.layout.list_view_items, shoppinList);
         simpleList.setAdapter(myAdapter);
+        simpleList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent =new Intent(getActivity(),SubCategery.class);
+                intent.putExtra("position",position);
+                startActivity(intent);
+            }
+        });
+
     }
 }

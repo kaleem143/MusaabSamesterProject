@@ -5,15 +5,26 @@ package com.example.musaab.musaabproject3;
  */
 
 public class Item {
-
+    int productId;
     String itemName;
     int itemImage;
+    double price;
 
-    public Item(String animalName,int animalImage)
+    public Item(int productId, String itemName,int itmeImage)
     {
-        this.itemImage =animalImage;
-        this.itemName =animalName;
+        this.productId=productId;
+        this.itemImage =itmeImage;
+        this.itemName =itemName;
     }
+    public Item(int productId, String animalName,int itemImage,double price )
+    {
+        this.productId=productId;
+        this.itemImage =itemImage;
+        this.itemName =animalName;
+        this.price=price;
+    }
+
+
     public String getItemName()
     {
         return itemName;
@@ -22,4 +33,7 @@ public class Item {
     {
         return itemImage;
     }
+    public int getProductId(){return productId;}
+
+ public double getPrice() {return price;}
 }

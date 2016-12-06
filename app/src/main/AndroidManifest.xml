@@ -32,6 +32,10 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_map_key" />
+
 
         <activity
             android:name=".Welcome"
@@ -40,7 +44,16 @@
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SubCategery"
+            android:label="@string/title_activity_sub_categery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Detail"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MapActivity"></activity>
     </application>
 
 </manifest>
